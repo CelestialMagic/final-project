@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             m_ToApplyMove += new Vector3(0, m_JumpForce, 0);
+            isGrounded = false; 
         }
 
 
