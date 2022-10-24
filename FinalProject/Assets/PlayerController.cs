@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour
             m_ToApplyMove += new Vector3(0, m_JumpForce, 0);
             isGrounded = false; 
         }
+        
 
 
     }
