@@ -55,18 +55,17 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             m_ToApplyMove += new Vector3(0, m_JumpForce, 0);
-            isGrounded = false; 
+            
         }
         
 
 
     }
     void FixedUpdate()
-    {   //Alternate Jump
-        //transform.position += 
-        m_Rigidbody.AddForce(m_ToApplyMove);
-        m_ToApplyMove = Vector3.zero;
-        
+    {   
+            m_Rigidbody.AddForce(m_ToApplyMove);
+            m_ToApplyMove = Vector3.zero;
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
