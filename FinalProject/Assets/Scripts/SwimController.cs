@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class SwimController : MonoBehaviour
 {
     [SerializeField]
     private AudioClip m_JumpSound;
@@ -43,32 +43,30 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Potential Swim Code
-        //if (Input.GetKey(KeyCode.D)){
-        //    m_ToApplyMove += new Vector3(m_SpeedForce, 0, 0);
-        //}
-
-        //if (Input.GetKey(KeyCode.A))
-        //{
-        //    m_ToApplyMove += new Vector3(-m_SpeedForce, 0, 0);
-        //}
-
-        if (Input.GetKey(KeyCode.Space) && gameObject.transform.position.y <= jumpHeight)
-        {
-            m_ToApplyMove += new Vector3(0, m_JumpForce, 0);
-            
-        }
         
+        if (Input.GetKey(KeyCode.D))
+        {
+            m_ToApplyMove += new Vector3(m_SpeedForce, 0, 0);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            m_ToApplyMove += new Vector3(-m_SpeedForce, 0, 0);
+        }
+
+
+
 
 
     }
     void FixedUpdate()
     {
         
-        
+        //Applies force to rigidbody to allow player to jump
+        //Resets to zero after. 
             m_Rigidbody.AddForce(m_ToApplyMove);
             m_ToApplyMove = Vector3.zero;
-            
+       
 
         
             
