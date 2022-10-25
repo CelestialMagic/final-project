@@ -275,7 +275,7 @@ MonoBehaviour:
   m_SpeedForce: 1
   m_JumpForce: 3
   m_Rigidbody: {fileID: 367828710}
-  groundHeight: -3
+  jumpHeight: -3
 --- !u!114 &367828713
 MonoBehaviour:
   m_ObjectHideFlags: 0

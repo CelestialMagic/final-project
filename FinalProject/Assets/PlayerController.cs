@@ -25,10 +25,8 @@ public class PlayerController : MonoBehaviour
     private Animator m_Anim;
     private SpriteRenderer m_Renderer;
 
-    private bool isGrounded;
-
     [SerializeField]
-    private float groundHeight;
+    private float jumpHeight;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +53,7 @@ public class PlayerController : MonoBehaviour
         //    m_ToApplyMove += new Vector3(-m_SpeedForce, 0, 0);
         //}
 
-        if (Input.GetKey(KeyCode.Space) && gameObject.transform.position.y <= groundHeight)
+        if (Input.GetKey(KeyCode.Space) && gameObject.transform.position.y <= jumpHeight)
         {
             m_ToApplyMove += new Vector3(0, m_JumpForce, 0);
             
@@ -81,9 +79,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = true;
-        }
+        
     }
 }
