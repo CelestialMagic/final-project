@@ -13,22 +13,9 @@ public class PowerUp : MonoBehaviour
     private Sprite icon; 
   
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //PowerUp disappears after touching player
         if(collision.gameObject.tag == "Player")
         {
             Object.Destroy(gameObject);
@@ -36,13 +23,13 @@ public class PowerUp : MonoBehaviour
         
     }
 
-    //returns the PowerUp ID number
+    //GetId() returns the PowerUp ID number
     public int GetID()
     {
         return ID; 
     }
 
-    //returns the PowerUp Icon
+    //GetIcon() returns the PowerUp Icon
     public Sprite GetIcon()
     {
         return icon; 

@@ -70,6 +70,8 @@ public class PlayerController : MonoBehaviour
     
     protected void OnTriggerEnter2D(Collider2D collision)
     {
+        //When the player collides with a PowerUp, it is added to
+        //the powerUps list. 
         if (collision.gameObject.tag == "PowerUp")
         {
             powerUps.Add(collision.gameObject.GetComponent<PowerUp>());
@@ -78,6 +80,8 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    //UsePowerUp() allows players to activate a power up given that they
+    //hit enter/return and have collected at least one powerup. 
     protected void UsePowerUp()
     {
         if (Input.GetKeyDown(KeyCode.Return) && powerUps.Count >= 1)
