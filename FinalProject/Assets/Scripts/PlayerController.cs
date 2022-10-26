@@ -28,10 +28,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     protected float jumpHeight;
 
+    protected int score;
+
+    protected List<PowerUp> powerUps; 
+
     // Start is called before the first frame update
     void Start()
     { 
         m_Renderer = GetComponent<SpriteRenderer>();
+        powerUps = new List<PowerUp>();
     }
 
     // Update is called once per frame
@@ -46,6 +51,11 @@ public class PlayerController : MonoBehaviour
             
         }
         
+        
+
+
+        
+        
     }
     protected void FixedUpdate()
     {
@@ -55,8 +65,11 @@ public class PlayerController : MonoBehaviour
             m_ToApplyMove = Vector3.zero;
     }
 
-    protected void OnCollisionEnter2D(Collision2D collision)
-    {
-        
-    }
+    //protected void OnTriggerEnter2D(Collision2D collision)
+    //{
+    //    if(collision.gameObject.tag == "PowerUp")
+    //    {
+           
+    //    }
+    //}
 }
