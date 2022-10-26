@@ -6,53 +6,37 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private AudioClip m_JumpSound;
+    protected AudioClip m_JumpSound;
 
     [SerializeField]
-    private AudioSource m_AudioSource;
+    protected AudioSource m_AudioSource;
 
     [SerializeField]
-    private float m_SpeedForce;
+    protected float m_JumpForce;
 
     [SerializeField]
-    private float m_JumpForce;
+    protected float m_SpeedForce;
 
     [SerializeField]
-    private Rigidbody2D m_Rigidbody;
+    protected Rigidbody2D m_Rigidbody;
 
-    private Vector3 m_ToApplyMove;
+    protected Vector3 m_ToApplyMove;
 
-    private Animator m_Anim;
-    private SpriteRenderer m_Renderer;
+    protected Animator m_Anim;
+    protected SpriteRenderer m_Renderer;
 
     [SerializeField]
-    private float jumpHeight;
+    protected float jumpHeight;
 
     // Start is called before the first frame update
     void Start()
-    {
-        //if (m_Anim != null)
-        //{
-        //    m_Anim.SetBool("Ground", true);
-        //    m_Anim.SetFloat("Speed", 0);
-        //}
-
+    { 
         m_Renderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
-    void Update()
+    virtual protected void Update()
     {
-        //Potential Swim Code
-        //if (Input.GetKey(KeyCode.D)){
-        //    m_ToApplyMove += new Vector3(m_SpeedForce, 0, 0);
-        //}
-
-        //if (Input.GetKey(KeyCode.A))
-        //{
-        //    m_ToApplyMove += new Vector3(-m_SpeedForce, 0, 0);
-        //}
-
         //This code allows for a single jump, as the player can only jump again
         //when the space key is pressed and the y-position is less than or equal
         //to the jumpHeight. This also limits how high the player can jump.
@@ -62,26 +46,16 @@ public class PlayerController : MonoBehaviour
             
         }
         
-
-
     }
-    void FixedUpdate()
+    protected void FixedUpdate()
     {
-        
         //Applies force to rigidbody to allow player to jump
         //Resets to zero after. 
             m_Rigidbody.AddForce(m_ToApplyMove);
             m_ToApplyMove = Vector3.zero;
-       
-
-        
-            
-       
-           
-        
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    protected void OnCollisionEnter2D(Collision2D collision)
     {
         
     }
