@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     protected float jumpHeight;
 
     protected int score;
-
+    //A list of ints representing powerUp IDs. 
     protected List<PowerUp> powerUps; 
 
     // Start is called before the first frame update
@@ -50,6 +50,8 @@ public class PlayerController : MonoBehaviour
             m_ToApplyMove += new Vector3(0, m_JumpForce, 0);
             
         }
+
+        UsePowerUp();
         
         
 
@@ -65,11 +67,25 @@ public class PlayerController : MonoBehaviour
             m_ToApplyMove = Vector3.zero;
     }
 
-    //protected void OnTriggerEnter2D(Collision2D collision)
-    //{
-    //    if(collision.gameObject.tag == "PowerUp")
-    //    {
-           
-    //    }
-    //}
+    
+    protected void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "PowerUp")
+        {
+            powerUps.Add(collision.gameObject.GetComponent<PowerUp>());
+
+        }
+
+    }
+
+    protected void UsePowerUp()
+    {
+        if (Input.GetKeyDown(KeyCode.Return) && powerUps.Count >= 1)
+        {
+            //Temporary Tester Code
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = powerUps[0].GetIcon();
+            powerUps.Remove(powerUps[0]);
+
+        }
+    }
 }

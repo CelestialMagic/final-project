@@ -21,6 +21,8 @@ public class SwimmingController : PlayerController
         {
             m_ToApplyMove += new Vector3(-m_SpeedForce, 0, 0);
         }
+        //Calls UsePowerUp() 
+        UsePowerUp();
     }
     
 }

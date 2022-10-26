@@ -550,7 +550,7 @@ GameObject:
   - component: {fileID: 1752538100}
   m_Layer: 0
   m_Name: TestPowerUp
-  m_TagString: Untagged
+  m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -671,4 +671,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdfa4af4a53a647898162c5a644e9846, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpName: 
+  ID: 1
+  icon: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}

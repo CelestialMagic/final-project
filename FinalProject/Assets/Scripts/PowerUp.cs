@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 
 public class PowerUp : MonoBehaviour
 {
     [SerializeField]
-    private string powerUpName;
+    private int ID;
+
+    [SerializeField]
+    private Sprite icon; 
   
 
 
@@ -31,5 +34,17 @@ public class PowerUp : MonoBehaviour
             Object.Destroy(gameObject);
         }
         
+    }
+
+    //returns the PowerUp ID number
+    public int GetID()
+    {
+        return ID; 
+    }
+
+    //returns the PowerUp Icon
+    public Sprite GetIcon()
+    {
+        return icon; 
     }
 }
