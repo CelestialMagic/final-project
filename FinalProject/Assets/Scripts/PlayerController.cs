@@ -28,7 +28,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     protected float jumpHeight;
 
-    protected int score;
+    protected float score;
+
+    protected float scoreTimer;
+
+    [SerializeField]
+    protected float scoreDelay; 
+
     //A list of ints representing powerUp IDs. 
     protected List<PowerUp> powerUps; 
 
@@ -37,6 +43,7 @@ public class PlayerController : MonoBehaviour
     { 
         m_Renderer = GetComponent<SpriteRenderer>();
         powerUps = new List<PowerUp>();
+        scoreTimer = 0f;
     }
 
     // Update is called once per frame
@@ -50,15 +57,16 @@ public class PlayerController : MonoBehaviour
             m_ToApplyMove += new Vector3(0, m_JumpForce, 0);
             
         }
-
-        UsePowerUp();
         
+        UsePowerUp();
+        IncreaseScore();
         
 
 
         
         
     }
+
     protected void FixedUpdate()
     {
         //Applies force to rigidbody to allow player to jump
@@ -91,5 +99,25 @@ public class PlayerController : MonoBehaviour
             powerUps.Remove(powerUps[0]);
 
         }
+    }
+
+    //The score increases each frame after a certain delay.
+    //The delay slows down the incremented score to make
+    //it feel as though the player is traveling at a certain speed. 
+    protected void IncreaseScore()
+    {
+        scoreTimer += Time.deltaTime;
+
+        if(scoreTimer >= scoreDelay)
+        {
+            scoreTimer = 0f;
+            score++; 
+        }
+    }
+
+    //Returns the score of the player. 
+    public float GetScore()
+    {
+        return score;
     }
 }
