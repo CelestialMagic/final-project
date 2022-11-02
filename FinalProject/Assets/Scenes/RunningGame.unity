@@ -275,7 +275,7 @@ MonoBehaviour:
   m_JumpForce: 3
   m_SpeedForce: 1
   m_Rigidbody: {fileID: 367828710}
-  jumpHeight: -3
+  jumpHeight: -2.5
   scoreDelay: 0.1
 --- !u!114 &367828713
 MonoBehaviour:
