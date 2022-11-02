@@ -20,4 +20,9 @@ public class StartMenu : MonoBehaviour
     {
         GameStateManager.StartGame();
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
