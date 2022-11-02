@@ -60,6 +60,7 @@ public class PlayerController : MonoBehaviour
         
         UsePowerUp();
         IncreaseScore();
+
         
 
 
@@ -120,4 +121,6 @@ public class PlayerController : MonoBehaviour
     {
         return score;
     }
+
+    
 }
