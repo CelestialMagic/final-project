@@ -12,7 +12,6 @@ public class Obstacles : MonoBehaviour
     void Update()
     {
         //Move the obstacle a little bit each frame
-        //transform.position += new Vector3(-GameStateManager.PillarMoveSpeed * Time.deltaTime, 0f, 0f); //this one didn't work???
         transform.Translate(-obstacleMoveSpeed * Time.deltaTime, 0f, 0f);
     }
 
