@@ -57,34 +57,22 @@ public class GameStateManager : MonoBehaviour
 
         //Put other inialization for you game state here
         PillarMoveSpeed = pillarMovespeed;
+        m_State = GAMESTATE.MENU;
 
 
     }
 
     public static string GetGameState(){
-        switch (m_State)
+
+        return m_State switch
         {
-            case GAMESTATE.PLAYING: 
-                return "PLAYING";
-                break;
-
-            case GAMESTATE.PAUSED:
-                return "PAUSED";
-                break;
-            case GAMESTATE.MENU:
-                return "MENU";
-                break;
-            case GAMESTATE.GAMEOVER:
-                return "GAMEOVER";
-                break; 
-
-            default:
-                return "N/A";
-                break;
-
-        }
-
-        }
+            GAMESTATE.PLAYING => "PLAYING",
+            GAMESTATE.PAUSED => "PAUSED",
+            GAMESTATE.MENU => "MENU",
+            GAMESTATE.GAMEOVER => "GAMEOVER",
+            _ => "N/A",
+        };
+    }
 
 
     //Alpha Playtest GameOver() code
@@ -94,21 +82,19 @@ public class GameStateManager : MonoBehaviour
         //Add any logic that you would want to do when the game ends here
         //This invokes the game over screen - here we are calling all the methods that subscribed to this action.
         //OnGameOver();
+        Debug.Log(m_State);
         m_State = GAMESTATE.GAMEOVER;
-        PillarMoveSpeed = 0; 
-
-
-
-
+        Debug.Log(m_State);
+        PillarMoveSpeed = 0;
+        Menu();
     }
 
     public static void ResetScene()
     {
-
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         m_State = GAMESTATE.PLAYING;
     }
-
 
     public static void GameOver()
     {

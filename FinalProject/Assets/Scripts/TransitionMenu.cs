@@ -13,7 +13,9 @@ public class TransitionMenu : StartMenu
     // Update is called once per frame
     protected override void Update()
     {
-        if(GameStateManager.GetGameState() == "GAMEOVER")
+        string gameState = GameStateManager.GetGameState();
+        Debug.Log(GameStateManager.GetGameState());
+        if (gameState == "GAMEOVER")
         {
             gameObject.SetActive(true);
         }
