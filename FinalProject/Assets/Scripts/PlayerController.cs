@@ -124,9 +124,10 @@ public class PlayerController : MonoBehaviour
 
     protected void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "GameOver")
+        if (collision.gameObject.tag == "GameOver")
         {
-            GameStateManager.LevelGameOver();
+            GameStateManager.Menu();
+
         }
     }
 }

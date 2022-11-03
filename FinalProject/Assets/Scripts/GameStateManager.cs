@@ -104,9 +104,6 @@ public class GameStateManager : MonoBehaviour
         m_State = GAMESTATE.MENU; 
         SceneManager.LoadScene(_instance.m_TitleSceneName);
 
-
-
-
     }
 
     //Used to advance to the next scene 
