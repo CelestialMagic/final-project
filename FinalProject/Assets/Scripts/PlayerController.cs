@@ -122,5 +122,11 @@ public class PlayerController : MonoBehaviour
         return score;
     }
 
-    
+    protected void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "GameOver")
+        {
+            GameStateManager.LevelGameOver();
+        }
+    }
 }

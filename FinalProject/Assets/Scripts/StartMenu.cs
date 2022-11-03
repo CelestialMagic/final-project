@@ -5,24 +5,35 @@ using UnityEngine;
 public class StartMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
-        //hello
+      
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
 
     }
-
-    public void StartGame()
+    //Starts the Game
+    protected void StartGame()
     {
         GameStateManager.StartGame();
     }
-
-    public void QuitGame()
+    //Quits the Game
+    protected void QuitGame()
     {
         Application.Quit();
     }
+    //Calls the GameStateManager to restart the scene
+    protected void Restart()
+    {
+        GameStateManager.ResetScene();
+    }
+    protected void MenuReturn()
+    {
+        GameStateManager.Menu(); 
+    }
+
+
 }

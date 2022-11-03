@@ -5,13 +5,18 @@ using UnityEngine;
 public class Obstacles : MonoBehaviour
 {
     //We will maybe set up obstacle movespeed in the GameStateManager class, but for now heres this:
-    [SerializeField]
-    private float obstacleMoveSpeed; 
+   
+    private float obstacleMoveSpeed;
 
+    private void Start()
+    {
+        obstacleMoveSpeed = GameStateManager.PillarMoveSpeed;
+    }
     // Update is called once per frame
     void Update()
     {
         //Move the obstacle a little bit each frame
+        obstacleMoveSpeed = GameStateManager.PillarMoveSpeed;
         transform.Translate(-obstacleMoveSpeed * Time.deltaTime, 0f, 0f);
     }
 

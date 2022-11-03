@@ -25,7 +25,7 @@ public class GameStateManager : MonoBehaviour
 
     private static GameStateManager _instance; //This class is a Singleton - We will also discuss this pattern later in this class.
 
-    
+
     enum GAMESTATE
     {
         MENU,
@@ -59,9 +59,32 @@ public class GameStateManager : MonoBehaviour
         PillarMoveSpeed = pillarMovespeed;
 
 
-
-
     }
+
+    public static string GetGameState(){
+        switch (m_State)
+        {
+            case GAMESTATE.PLAYING: 
+                return "PLAYING";
+                break;
+
+            case GAMESTATE.PAUSED:
+                return "PAUSED";
+                break;
+            case GAMESTATE.MENU:
+                return "MENU";
+                break;
+            case GAMESTATE.GAMEOVER:
+                return "GAMEOVER";
+                break; 
+
+            default:
+                return "N/A";
+                break;
+
+        }
+
+        }
 
 
     //Alpha Playtest GameOver() code
@@ -71,16 +94,19 @@ public class GameStateManager : MonoBehaviour
         //Add any logic that you would want to do when the game ends here
         //This invokes the game over screen - here we are calling all the methods that subscribed to this action.
         //OnGameOver();
-        PillarMoveSpeed = 0;
+        m_State = GAMESTATE.GAMEOVER;
+        PillarMoveSpeed = 0; 
 
-        
+
 
 
     }
 
     public static void ResetScene()
     {
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        m_State = GAMESTATE.PLAYING;
     }
 
 
@@ -97,11 +123,10 @@ public class GameStateManager : MonoBehaviour
 
     }
 
-
     //Used to advance to the next scene 
     public static void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
     }
 
     public static void StartGame()
@@ -121,6 +146,13 @@ public class GameStateManager : MonoBehaviour
             m_State = GAMESTATE.PLAYING;
             Time.timeScale = 1; 
         }
+    }
+
+    public static void Menu()
+    {
+        m_State = GAMESTATE.MENU; 
+        SceneManager.LoadScene(0);
+
     }
 }
 

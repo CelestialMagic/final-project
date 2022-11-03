@@ -807,7 +807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverScreen: {fileID: 1053242788}
-  pillarMovespeed: 0
+  pillarMovespeed: 5
   m_Levels:
   - RunningGame
   - SwimmingGame
