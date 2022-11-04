@@ -30,6 +30,8 @@ public class StartMenu : MonoBehaviour
     {
         GameStateManager.ResetScene();
     }
+    //MenuReturn() calls the GameStateManager to update the current Game State
+    // and
     protected void MenuReturn()
     {
         GameStateManager.Menu(); 

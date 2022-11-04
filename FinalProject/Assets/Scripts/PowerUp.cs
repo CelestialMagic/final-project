@@ -7,10 +7,10 @@ using UnityEngine.UI;
 public class PowerUp : MonoBehaviour
 {
     [SerializeField]
-    private int ID;
+    private int ID;//A number representing the PowerUp type
 
     [SerializeField]
-    private Sprite icon; 
+    private Sprite icon; //Represents the sprite to be displayed of PowerUp
   
 
     private void OnTriggerEnter2D(Collider2D collision)
