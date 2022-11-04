@@ -8,12 +8,12 @@ using System;
 public class GameStateManager : MonoBehaviour
 {
     //public static Action OnGameOver;  //You can ignore this for now - we will talk about Actions a bit later in this course.
-    public static float PillarMoveSpeed { get; private set; } //A read only global property that makes it easy for us to change the move speed of the pillars.
+    public static float ObstacleMoveSpeed { get; private set; } //A read only global property that makes it easy for us to change the move speed of the pillars.
 
     [SerializeField]
     private GameObject GameOverScreen; //A reference to the GameObject that is the GameOver UI Screen
     [SerializeField]
-    private float pillarMovespeed; //This field is exposed in the editor but private to the class, this allows us to adjust the move speed of the pilars in the editor
+    private float obstacleMoveSpeed; //This field is exposed in the editor but private to the class, this allows us to adjust the move speed of the pilars in the editor
 
     [SerializeField]
     private List<String> m_Levels = new List<string>();
@@ -56,7 +56,7 @@ public class GameStateManager : MonoBehaviour
 
 
         //Put other inialization for you game state here
-        PillarMoveSpeed = pillarMovespeed;
+        ObstacleMoveSpeed = obstacleMoveSpeed;
         m_State = GAMESTATE.MENU;
 
 
@@ -85,7 +85,7 @@ public class GameStateManager : MonoBehaviour
         Debug.Log(m_State);
         m_State = GAMESTATE.GAMEOVER;
         Debug.Log(m_State);
-        PillarMoveSpeed = 0;
+        ObstacleMoveSpeed = 2;
         Menu();
     }
 
