@@ -6,34 +6,34 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    protected AudioClip m_JumpSound;
+    protected AudioClip m_JumpSound;//A clip representing the player jump sound
 
     [SerializeField]
-    protected AudioSource m_AudioSource;
+    protected AudioSource m_AudioSource;//Audio Source for player
 
     [SerializeField]
-    protected float m_JumpForce;
+    protected float m_JumpForce;//The force at which the player jumps
 
     [SerializeField]
-    protected float m_SpeedForce;
+    protected float m_SpeedForce;//The speed of a player (used mainly for inheritance in SwimmerController)
 
     [SerializeField]
-    protected Rigidbody2D m_Rigidbody;
+    protected Rigidbody2D m_Rigidbody;//The Rigidbody
 
-    protected Vector3 m_ToApplyMove;
+    protected Vector3 m_ToApplyMove;//A Vector3 representing the player movement force
 
-    protected Animator m_Anim;
-    protected SpriteRenderer m_Renderer;
-
-    [SerializeField]
-    protected float jumpHeight;
-
-    protected float score;
-
-    protected float scoreTimer;
+    protected Animator m_Anim;//The Animator
+    protected SpriteRenderer m_Renderer;//The Sprite Renderer
 
     [SerializeField]
-    protected float scoreDelay; 
+    protected float jumpHeight;// A float representing a height a player must be less than or equal to to jump again. 
+
+    protected float score;//The player score
+
+    protected float scoreTimer;//A timer that tracks when to update the score
+
+    [SerializeField]
+    protected float scoreDelay; //A number representing a time to delay the score increment
 
     //A list of ints representing powerUp IDs. 
     protected List<PowerUp> powerUps;
@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
         }
         
         UsePowerUp();
+        //Called to increment the score
         IncreaseScore();
 
         
@@ -124,8 +125,10 @@ public class PlayerController : MonoBehaviour
         return score;
     }
 
+    //OnCollisionEnter2D() is used to detect player collisions
     protected void OnCollisionEnter2D(Collision2D collision)
     {
+        //Detects if a player hits an obstacle (tagged "GameOver")
         if (collision.gameObject.tag == "GameOver")
         {
             GameStateManager.Menu();
