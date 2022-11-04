@@ -888,9 +888,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverScreen: {fileID: 0}
-  obstacleMoveSpeed: 4
+  obstacleMovespeed: 5
   m_Levels: []
-  m_TitleSceneName: 
+  m_TitleSceneName: TitleScreen
 --- !u!4 &779190899
 Transform:
   m_ObjectHideFlags: 0
