@@ -406,7 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_JumpSound: {fileID: 0}
   m_AudioSource: {fileID: 0}
-  m_JumpForce: 3
+  m_JumpForce: 5000
   m_SpeedForce: 1
   m_Rigidbody: {fileID: 367828710}
   jumpHeight: -2.5

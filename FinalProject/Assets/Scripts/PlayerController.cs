@@ -36,7 +36,9 @@ public class PlayerController : MonoBehaviour
     protected float scoreDelay; 
 
     //A list of ints representing powerUp IDs. 
-    protected List<PowerUp> powerUps; 
+    protected List<PowerUp> powerUps;
+
+   
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +56,7 @@ public class PlayerController : MonoBehaviour
         //to the jumpHeight. This also limits how high the player can jump.
         if (Input.GetKey(KeyCode.Space) && gameObject.transform.position.y <= jumpHeight)
         {
-            m_ToApplyMove += new Vector3(0, m_JumpForce, 0);
+            m_ToApplyMove += new Vector3(0, m_JumpForce *Time.deltaTime, 0);
             
         }
         
