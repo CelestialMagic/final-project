@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 87995280}
   - component: {fileID: 87995279}
   m_Layer: 5
-  m_Name: RestartButton
+  m_Name: NextLevel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,9 +207,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 1543856830}
+        m_TargetAssemblyTypeName: TransitionMenu, Assembly-CSharp
+        m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -887,9 +887,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c6810c5d07c4f2487ec60d7a349ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverScreen: {fileID: 0}
   obstacleMovespeed: 5
-  m_Levels: []
   m_TitleSceneName: TitleScreen
 --- !u!4 &779190899
 Transform:
@@ -1187,9 +1185,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 1543856830}
+        m_TargetAssemblyTypeName: TransitionMenu, Assembly-CSharp
+        m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1455,7 +1453,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Restart
+  m_Text: Next Level
 --- !u!222 &1749435628
 CanvasRenderer:
   m_ObjectHideFlags: 0

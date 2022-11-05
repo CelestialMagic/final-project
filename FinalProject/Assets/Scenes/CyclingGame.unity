@@ -199,9 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c6810c5d07c4f2487ec60d7a349ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverScreen: {fileID: 0}
-  obstacleMoveSpeed: 4
-  m_Levels: []
+  obstacleMovespeed: 0
   m_TitleSceneName: 
 --- !u!4 &107957012
 Transform:
@@ -788,6 +786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 1689625364}
   scorer: {fileID: 202771578}
+  pc: {fileID: 202771580}
 --- !u!114 &1689625364
 MonoBehaviour:
   m_ObjectHideFlags: 0

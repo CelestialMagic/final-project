@@ -7,16 +7,15 @@ using System;
 
 public class GameStateManager : MonoBehaviour
 {
-    //public static Action OnGameOver;  //You can ignore this for now - we will talk about Actions a bit later in this course.
+    public static Action TempGameOver;  //You can ignore this for now - we will talk about Actions a bit later in this course.
     public static float ObstacleMoveSpeed { get; private set; } //A read only global property that makes it easy for us to change the move speed of the pillars.
 
-    [SerializeField]
-    private GameObject GameOverScreen; //A reference to the GameObject that is the GameOver UI Screen
+   
     [SerializeField]
     private float obstacleMovespeed; //This field is exposed in the editor but private to the class, this allows us to adjust the move speed of the pilars in the editor
 
-    [SerializeField]
-    private List<String> m_Levels = new List<string>(); // A list of levels in the form of strings
+    //[SerializeField]
+    //private List<String> m_Levels = new List<string>(); // A list of levels in the form of strings
 
     [SerializeField]
     private string m_TitleSceneName;//A string representing the name of the Title Scene
@@ -62,19 +61,19 @@ public class GameStateManager : MonoBehaviour
 
     }
 
-    //GetGameState() was created with the intention of retrieving the game state
-    //from the GameStateManager. It uses a switch statement. 
-    public static string GetGameState(){
+    ////GetGameState() was created with the intention of retrieving the game state
+    ////from the GameStateManager. It uses a switch statement. 
+    //public static string GetGameState(){
 
-        return m_State switch
-        {
-            GAMESTATE.PLAYING => "PLAYING",
-            GAMESTATE.PAUSED => "PAUSED",
-            GAMESTATE.MENU => "MENU",
-            GAMESTATE.GAMEOVER => "GAMEOVER",
-            _ => "N/A",
-        };
-    }
+    //    return m_State switch
+    //    {
+    //        GAMESTATE.PLAYING => "PLAYING",
+    //        GAMESTATE.PAUSED => "PAUSED",
+    //        GAMESTATE.MENU => "MENU",
+    //        GAMESTATE.GAMEOVER => "GAMEOVER",
+    //        _ => "N/A",
+    //    };
+    //}
 
     //LevelGameOver() is eventually going to be used to advance between levels.
     //It is not a final game over, but rather, a pause to let players advance. 
@@ -100,7 +99,11 @@ public class GameStateManager : MonoBehaviour
     //Used to advance to the next scene
     public static void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
+        if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        
     }
 
     //StartGame() is used to start the game.

@@ -15,6 +15,7 @@ public class StartMenu : MonoBehaviour
     {
 
     }
+
     //Starts the Game
     protected void StartGame()
     {

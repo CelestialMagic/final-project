@@ -8,18 +8,39 @@ public class TransitionMenu : StartMenu
     protected override void Start()
     {
         //Hides the menu
-        gameObject.SetActive(false);
+      
     }
 
-    // Update is called once per frame
-    protected override void Update()
+    private void Awake()
     {
-        //This is intended to retrieve the game state and display the menu.
-        string gameState = GameStateManager.GetGameState();
-        Debug.Log(GameStateManager.GetGameState());
-        if (gameState == "GAMEOVER")
-        {
-            gameObject.SetActive(true);
-        }
+        gameObject.SetActive(false);
+        GameStateManager.TempGameOver += Open;
     }
+
+    private void Open()
+    {
+        gameObject.SetActive(true);
+    }
+
+    public void OnDestroy()
+    {
+        GameStateManager.TempGameOver -= Open;
+    }
+
+    public void MainMenu()
+    {
+        MenuReturn();
+    }
+
+    public void Replay()
+    {
+        Restart();
+    }
+
+    public void NextLevel()
+    {
+        GameStateManager.NextLevel();
+    }
+   
+
 }

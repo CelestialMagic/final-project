@@ -137,6 +137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 5605451287000801667}
   scorer: {fileID: 1915639858}
+  pc: {fileID: 0}
+  sc: {fileID: 863273388}
 --- !u!1 &662229430
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +271,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 474d21710fde240a19769632fd7ce683, type: 3}
+--- !u!114 &863273388 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6717339465156585450, guid: 474d21710fde240a19769632fd7ce683, type: 3}
+  m_PrefabInstance: {fileID: 863273387}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915639858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dec06fe57a234923a5e0069c4eaca94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1113459546
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,9 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c6810c5d07c4f2487ec60d7a349ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameOverScreen: {fileID: 0}
-  obstacleMoveSpeed: 4
-  m_Levels: []
+  obstacleMovespeed: 0
   m_TitleSceneName: 
 --- !u!4 &1179620954
 Transform:

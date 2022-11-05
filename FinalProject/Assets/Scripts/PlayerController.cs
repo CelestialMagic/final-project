@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
         //Detects if a player hits an obstacle (tagged "GameOver")
         if (collision.gameObject.tag == "GameOver")
         {
-            GameStateManager.Menu();
+            GameStateManager.TempGameOver();
 
         }
     }

@@ -14,5 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RunningGame.unity
     guid: 93cf120ab25284109bcb58ff33c949c2
+  - enabled: 1
+    path: Assets/Scenes/SwimmingGame.unity
+    guid: 7296cc8d42e7546b78c019e3c2494ec7
+  - enabled: 1
+    path: Assets/Scenes/CyclingGame.unity
+    guid: 10b76b39060c942efaf38f03ba9a9e22
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e8e76ed6101974bb4a2a6e826d02ab0b, type: 2}
