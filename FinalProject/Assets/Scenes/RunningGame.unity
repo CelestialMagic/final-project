@@ -1060,6 +1060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 1062421884}
   scorer: {fileID: 367828707}
+  pc: {fileID: 367828712}
 --- !u!114 &1062421884
 MonoBehaviour:
   m_ObjectHideFlags: 0

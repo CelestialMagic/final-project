@@ -10,17 +10,19 @@ public class ScoreDisplay : MonoBehaviour
     [SerializeField]
     protected Text scoreDisplay;
 
-    
     //The GameObject that is scoring the points (player)
     [SerializeField]
-    protected GameObject scorer; 
+    protected GameObject scorer;
+
+    [SerializeField]
+    private PlayerController pc; 
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
         //Retrieves score from scorer object with PlayerController.GetScore()
         //Converted to kilometers
-        scoreDisplay.text = $"Distance: {scorer.GetComponent<PlayerController>().GetScore() / 1000}";
+        scoreDisplay.text = $"Distance: {pc.GetScore() / 1000}";
     }
 
     // Update is called once per frame
@@ -28,6 +30,6 @@ public class ScoreDisplay : MonoBehaviour
     {
         //Updates score with PlayerController.GetScore()
         //Converted to kilometers
-        scoreDisplay.text = $"Distance: {scorer.GetComponent<PlayerController>().GetScore() / 1000}";
+        scoreDisplay.text = $"Distance: {pc.GetScore() / 1000}";
     }
 }
