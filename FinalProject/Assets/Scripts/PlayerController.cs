@@ -139,13 +139,21 @@ public class PlayerController : MonoBehaviour
         //Detects if a player hits an obstacle (tagged "GameOver")
         if (collision.gameObject.tag == "GameOver")
         {
-            gameOver = true;
-            GameStateManager.LevelGameOver();
-            GameStateManager.TempGameOver();
-            m_JumpForce = 0f;
-            
+
+            GameOverProcedure();
             
 
         }
+    }
+
+    protected void GameOverProcedure()
+    {
+        gameOver = true;
+        GameStateManager.LevelGameOver();
+        GameStateManager.TempGameOver();
+        GameStateManager.StoreScore(score);
+        m_JumpForce = 0f;
+        m_SpeedForce = 0f; 
+
     }
 }

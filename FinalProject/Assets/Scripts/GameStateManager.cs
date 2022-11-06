@@ -24,6 +24,14 @@ public class GameStateManager : MonoBehaviour
 
     private static GameStateManager _instance; //This class is a Singleton - We will also discuss this pattern later in this class.
 
+    private static float runScore; //Represents score from running level
+
+    private static float swimScore; //Represents score from swimming level
+
+    private static float cycleScore; //Represents score from cycling level
+
+    private static float finalScore; //Represents score from all three games combined
+
     //An enum that represents the game states. 
     enum GAMESTATE
     {
@@ -81,7 +89,6 @@ public class GameStateManager : MonoBehaviour
     {
         m_State = GAMESTATE.GAMEOVER;
         ObstacleMoveSpeed = 0;
-        //Menu();
     }
 
 
@@ -135,6 +142,25 @@ public class GameStateManager : MonoBehaviour
         m_State = GAMESTATE.MENU; 
         SceneManager.LoadScene(_instance.m_TitleSceneName);
 
+    }
+
+    public static void StoreScore(float levelScore)
+    {
+        switch (SceneManager.GetActiveScene().buildIndex)
+        {
+            case 1:
+                runScore = levelScore;
+                break;
+            case 2:
+                swimScore = levelScore;
+                break;
+            case 3:
+                cycleScore = levelScore;
+                break;
+            default:
+                break;
+
+        }
     }
 }
 
