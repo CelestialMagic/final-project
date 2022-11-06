@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     protected float scoreDelay; //A number representing a time to delay the score increment
 
+    protected bool gameOver; 
+
     //A list of ints representing powerUp IDs. 
     protected List<PowerUp> powerUps;
 
@@ -46,6 +48,7 @@ public class PlayerController : MonoBehaviour
         m_Renderer = GetComponent<SpriteRenderer>();
         powerUps = new List<PowerUp>();
         scoreTimer = 0f;
+        gameOver = false;
     }
 
     // Update is called once per frame
@@ -110,13 +113,18 @@ public class PlayerController : MonoBehaviour
     //it feel as though the player is traveling at a certain speed. 
     protected void IncreaseScore()
     {
-        scoreTimer += Time.deltaTime;
-
-        if(scoreTimer >= scoreDelay)
+        if (gameOver == false)
         {
-            scoreTimer = 0f;
-            score++; 
+            scoreTimer += Time.deltaTime;
+
+            if (scoreTimer >= scoreDelay)
+            {
+                scoreTimer = 0f;
+                score++;
+            }
+
         }
+        
     }
 
     //Returns the score of the player. 
@@ -131,7 +139,12 @@ public class PlayerController : MonoBehaviour
         //Detects if a player hits an obstacle (tagged "GameOver")
         if (collision.gameObject.tag == "GameOver")
         {
+            gameOver = true;
+            GameStateManager.LevelGameOver();
             GameStateManager.TempGameOver();
+            m_JumpForce = 0f;
+            
+            
 
         }
     }
