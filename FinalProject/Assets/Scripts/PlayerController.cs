@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
             m_ToApplyMove += new Vector3(0, m_JumpForce *Time.deltaTime, 0);
             
         }
-        
+
         UsePowerUp();
         //Called to increment the score
         IncreaseScore();
@@ -156,4 +156,5 @@ public class PlayerController : MonoBehaviour
         m_SpeedForce = 0f; 
 
     }
+   
 }

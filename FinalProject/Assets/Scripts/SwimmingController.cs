@@ -24,6 +24,7 @@ public class SwimmingController : PlayerController
         
         UsePowerUp();
         IncreaseScore();
+     
     }
     
 }

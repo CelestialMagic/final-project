@@ -73,7 +73,13 @@ public class GameStateManager : MonoBehaviour
 
 
     }
-
+    //private void Update()
+    //{
+    //    if (Input.GetKey(KeyCode.Escape))
+    //    {
+    //        GameStateManager.TogglePause();
+    //    }
+    //}
 
     //LevelGameOver() is eventually going to be used to advance between levels.
     //It is not a final game over, but rather, a pause to let players advance. 
@@ -101,6 +107,9 @@ public class GameStateManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            
+
+
         }
         
     }
