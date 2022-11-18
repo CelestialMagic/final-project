@@ -215,7 +215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6717339465156585450, guid: 474d21710fde240a19769632fd7ce683, type: 3}
       propertyPath: m_SpeedForce
-      value: 0.25
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6717339465156585454, guid: 474d21710fde240a19769632fd7ce683, type: 3}
       propertyPath: m_SortingLayer

@@ -13,13 +13,13 @@ public class SwimmingController : PlayerController
        //Player can move right with D
         if (Input.GetKey(KeyCode.D))
         {
-            m_ToApplyMove += new Vector3(m_SpeedForce, 0, 0);
+            m_ToApplyMove += new Vector3(m_SpeedForce * Time.deltaTime, 0, 0);
         }
 
         //Player can move left with A
         if (Input.GetKey(KeyCode.A))
         {
-            m_ToApplyMove += new Vector3(-m_SpeedForce, 0, 0);
+            m_ToApplyMove += new Vector3(-m_SpeedForce * Time.deltaTime, 0, 0);
         }
         
         UsePowerUp();
