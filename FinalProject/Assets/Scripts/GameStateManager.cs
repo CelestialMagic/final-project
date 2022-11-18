@@ -20,6 +20,9 @@ public class GameStateManager : MonoBehaviour
     [SerializeField]
     private string m_TitleSceneName;//A string representing the name of the Title Scene
 
+    [SerializeField]
+    private string m_HighScoreSceneName;
+
     private static GAMESTATE m_State; //The current game state
 
     private static GameStateManager _instance; //This class is a Singleton - We will also discuss this pattern later in this class.
@@ -38,7 +41,9 @@ public class GameStateManager : MonoBehaviour
         MENU,
         PLAYING,
         PAUSED,
-        GAMEOVER
+        GAMEOVER,
+        FINALSCORE
+
     }
 
 
@@ -69,19 +74,6 @@ public class GameStateManager : MonoBehaviour
 
     }
 
-    ////GetGameState() was created with the intention of retrieving the game state
-    ////from the GameStateManager. It uses a switch statement. 
-    //public static string GetGameState(){
-
-    //    return m_State switch
-    //    {
-    //        GAMESTATE.PLAYING => "PLAYING",
-    //        GAMESTATE.PAUSED => "PAUSED",
-    //        GAMESTATE.MENU => "MENU",
-    //        GAMESTATE.GAMEOVER => "GAMEOVER",
-    //        _ => "N/A",
-    //    };
-    //}
 
     //LevelGameOver() is eventually going to be used to advance between levels.
     //It is not a final game over, but rather, a pause to let players advance. 
@@ -141,6 +133,13 @@ public class GameStateManager : MonoBehaviour
     {
         m_State = GAMESTATE.MENU; 
         SceneManager.LoadScene(_instance.m_TitleSceneName);
+
+    }
+
+    public static void HighScoreMenu()
+    {
+        m_State = GAMESTATE.MENU;
+        SceneManager.LoadScene(_instance.m_HighScoreSceneName);
 
     }
 

@@ -20,5 +20,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CyclingGame.unity
     guid: 10b76b39060c942efaf38f03ba9a9e22
+  - enabled: 1
+    path: Assets/Scenes/EndScreen.unity
+    guid: 99f37167de1154c849038499c223dcfd
+  - enabled: 1
+    path: Assets/Scenes/HighScoreScreen.unity
+    guid: 6e2ce9d4c0cbf4a838127613a61be587
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: e8e76ed6101974bb4a2a6e826d02ab0b, type: 2}

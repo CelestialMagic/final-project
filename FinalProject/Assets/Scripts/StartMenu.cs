@@ -26,17 +26,22 @@ public class StartMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
     //Calls the GameStateManager to restart the scene
     protected void Restart()
     {
         GameStateManager.ResetScene();
     }
+
     //MenuReturn() calls the GameStateManager to update the current Game State
-    // and
     protected void MenuReturn()
     {
         GameStateManager.Menu(); 
     }
 
+    private void HighScore()
+    {
+        GameStateManager.HighScoreMenu();
+    }
 
 }
