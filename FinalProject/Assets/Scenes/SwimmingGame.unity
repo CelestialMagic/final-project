@@ -136,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreDisplay: {fileID: 5605451287000801667}
+  scorer: {fileID: 1915639858}
   pc: {fileID: 0}
   sc: {fileID: 863273388}
 --- !u!1 &662229430
@@ -147,6 +148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 662229431}
+  - component: {fileID: 662229432}
   m_Layer: 0
   m_Name: Mover
   m_TagString: Untagged
@@ -175,10 +177,27 @@ Transform:
   m_RootOrder: 5
 >>>>>>> parent of 736b383 (Removed PowerUp (Made Prefab))
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 =======
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 >>>>>>> 93ac5aa885ed358231afc97c5c3ee2404ae7032e
+=======
+--- !u!114 &662229432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 662229430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e9984fdf9aa2b40bde3d9e35a2b0ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  reset: -0.5
+>>>>>>> parent of 7d36826 (Fixed Water)
 --- !u!1001 &863273387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -269,7 +288,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6717339465156585450, guid: 474d21710fde240a19769632fd7ce683, type: 3}
   m_PrefabInstance: {fileID: 863273387}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1915639858}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7dec06fe57a234923a5e0069c4eaca94, type: 3}
@@ -339,7 +358,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleMovespeed: 0
   m_TitleSceneName: 
-  m_HighScoreSceneName: 
 --- !u!4 &1179620954
 Transform:
   m_ObjectHideFlags: 0
@@ -799,6 +817,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 1
   icon: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+--- !u!1 &1915639858 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6717339465156585429, guid: 474d21710fde240a19769632fd7ce683, type: 3}
+  m_PrefabInstance: {fileID: 863273387}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2066532909
 GameObject:
   m_ObjectHideFlags: 0
