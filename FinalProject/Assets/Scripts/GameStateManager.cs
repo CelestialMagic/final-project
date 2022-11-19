@@ -73,13 +73,7 @@ public class GameStateManager : MonoBehaviour
 
 
     }
-    //private void Update()
-    //{
-    //    if (Input.GetKey(KeyCode.Escape))
-    //    {
-    //        GameStateManager.TogglePause();
-    //    }
-    //}
+
 
     //LevelGameOver() is eventually going to be used to advance between levels.
     //It is not a final game over, but rather, a pause to let players advance. 
@@ -89,7 +83,14 @@ public class GameStateManager : MonoBehaviour
         ObstacleMoveSpeed = 0;
     }
 
+    private void Update()
+    {
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameStateManager.TogglePause();
+        }
+    }
 
     //ResetScene() is responsible for resetting the current scene through a reload.
     public static void ResetScene()
@@ -107,6 +108,7 @@ public class GameStateManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            m_State = GAMESTATE.PLAYING; 
             
 
 
@@ -170,6 +172,8 @@ public class GameStateManager : MonoBehaviour
 
         }
     }
+
+    
 }
 
 
