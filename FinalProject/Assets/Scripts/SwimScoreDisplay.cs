@@ -14,7 +14,7 @@ public class SwimScoreDisplay : ScoreDisplay
     {
         //Retrieves starting score from scorer object with SwimmingController.GetScore()
         //Converted to kilometers
-        scoreDisplay.text = $"Distance: {sc.GetScore()}";
+        DisplayScore();
     }
 
     // Update is called once per frame
@@ -22,6 +22,11 @@ public class SwimScoreDisplay : ScoreDisplay
     {
         //Updates score with SwimmingController.GetScore()
         //Converted to kilometers
+        DisplayScore();
+    }
+
+    protected override void DisplayScore()
+    {
         scoreDisplay.text = $"Distance: {sc.GetScore()}";
     }
 }

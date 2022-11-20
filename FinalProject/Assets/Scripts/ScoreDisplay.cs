@@ -15,19 +15,21 @@ public class ScoreDisplay : MonoBehaviour
     [SerializeField]
     private PlayerController pc;
 
-   
-
-
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        
-        scoreDisplay.text = $"Distance: {pc.GetScore()}";
+
+        DisplayScore();
     }
 
     // Update is called once per frame
     protected virtual void Update()
+    {
+        DisplayScore();
+    }
+
+    protected virtual void DisplayScore()
     {
         scoreDisplay.text = $"Distance: {pc.GetScore()}";
     }
