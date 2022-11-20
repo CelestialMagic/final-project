@@ -35,7 +35,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     protected float scoreDelay; //A number representing a time to delay the score increment
 
-    protected bool gameOver; 
+    protected bool gameOver;
+
+    protected const float divider = 1000; 
 
     //A list of ints representing powerUp IDs. 
     protected List<PowerUp> powerUps;
@@ -130,7 +132,7 @@ public class PlayerController : MonoBehaviour
     //Returns the score of the player. 
     public float GetScore()
     {
-        return score;
+        return score/divider;
     }
 
     //OnCollisionEnter2D() is used to detect player collisions

@@ -16,7 +16,6 @@ public class ScoreDisplay : MonoBehaviour
     private PlayerController pc;
 
    
-    protected const int divider = 1000; 
 
 
 
@@ -24,12 +23,12 @@ public class ScoreDisplay : MonoBehaviour
     protected virtual void Start()
     {
         
-        scoreDisplay.text = $"Distance: {pc.GetScore() / divider}";
+        scoreDisplay.text = $"Distance: {pc.GetScore()}";
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
-        scoreDisplay.text = $"Distance: {pc.GetScore() / divider}";
+        scoreDisplay.text = $"Distance: {pc.GetScore()}";
     }
 }
