@@ -72,6 +72,7 @@ public class GameStateManager : MonoBehaviour
         m_State = GAMESTATE.MENU;
 
 
+
     }
 
 
@@ -81,6 +82,8 @@ public class GameStateManager : MonoBehaviour
     {
         m_State = GAMESTATE.GAMEOVER;
         ObstacleMoveSpeed = 0;
+        CalculateFinalScore();
+        PlayerPrefs.SetFloat("Score", finalScore);
     }
 
     private void Update()
@@ -90,6 +93,7 @@ public class GameStateManager : MonoBehaviour
         {
             GameStateManager.TogglePause();
         }
+        
     }
 
     //ResetScene() is responsible for resetting the current scene through a reload.
@@ -171,6 +175,18 @@ public class GameStateManager : MonoBehaviour
                 break;
 
         }
+    }
+
+    public static void CalculateFinalScore()
+    {
+        finalScore = runScore + swimScore + cycleScore;
+    }
+
+    public static void GameOver()
+    {
+        CalculateFinalScore();
+        m_State = GAMESTATE.FINALSCORE;
+        PlayerPrefs.SetFloat("Score", finalScore);
     }
 
     

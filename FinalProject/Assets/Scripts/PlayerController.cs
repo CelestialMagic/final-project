@@ -151,9 +151,9 @@ public class PlayerController : MonoBehaviour
     protected void GameOverProcedure()
     {
         gameOver = true;
+        GameStateManager.StoreScore(GetScore());
         GameStateManager.LevelGameOver();
         GameStateManager.TempGameOver();
-        GameStateManager.StoreScore(score);
         m_JumpForce = 0f;
         m_SpeedForce = 0f; 
 
