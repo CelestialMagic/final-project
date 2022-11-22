@@ -27,5 +27,6 @@ public class BackgroundMover : MonoBehaviour
         {
             transform.position = startPos;
         }
+
     }
 }
