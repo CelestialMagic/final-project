@@ -5,19 +5,19 @@ using UnityEngine;
 public class BackgroundMover : MonoBehaviour
 {
     [SerializeField]
-    private int moveSpeed;//Represents the move speed of the background image
+    protected int moveSpeed;//Represents the move speed of the background image
     [SerializeField]
-    private float reset;//Represents the point where the background image will reset
+    protected float reset;//Represents the point where the background image will reset
 
-    private Vector3 startPos;//Represents the starting location of the image
+    protected Vector3 startPos;//Represents the starting location of the image
 
-    void Start()
+    protected void Start()
     {
         startPos = transform.position;
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         //The image moves gradually 
         transform.position += new Vector3(-moveSpeed * Time.deltaTime, 0f, 0f);
