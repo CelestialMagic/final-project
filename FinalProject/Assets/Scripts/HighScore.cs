@@ -6,25 +6,24 @@ using UnityEngine.UI;
 public class HighScore : MonoBehaviour
 {
     [SerializeField]
-    private Text scoreDisplay;
+    protected Text scoreDisplay;
 
     private float highScore;
 
-   
-
     // Start is called before the first frame update
-    private void Start()
+    protected void Start()
     {
         DisplayScore();
     }
 
     // Update is called once per frame
-    private void Update()
+    protected void Update()
     {
         DisplayScore();
     }
 
-    private void DisplayScore()
+    //DisplayScore() method overridden by inherited classes
+    protected virtual void DisplayScore()
     {
         scoreDisplay.text = $"{PlayerPrefs.GetFloat("Score")}";
     }
