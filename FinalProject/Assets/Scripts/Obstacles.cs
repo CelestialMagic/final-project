@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Obstacles : MonoBehaviour
 {
-    //We will maybe set up obstacle movespeed in the GameStateManager class, but for now heres this:
    
     // Update is called once per frame
     void Update()
@@ -18,11 +17,12 @@ public class Obstacles : MonoBehaviour
 
         //This method is called when the object enters a collider trigger. 
         //We don't want an infinite number of obstacles in the game world 
-        //Here we should see if the obstacle has entered the "Despawn" trigger so that we can destroy the object.
+        //Here we should see if the obstacle has entered the "Despawn" trigger
+        //so that we can destroy the object.
 
-        if (collision.tag == "Despawn") //this collision tag is just a string
+        if (collision.tag == "Despawn")
         {
-            Destroy(gameObject); //Destroy the obstacle!
+            Destroy(gameObject);
         }
         
     }

@@ -35,9 +35,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     protected float scoreDelay; //A number representing a time to delay the score increment
 
-    protected bool gameOver;
+    protected bool gameOver;//A bool used to determine incrementing score (stops after gameover)
 
-    protected const float divider = 1000; 
+    protected const float divider = 1000; //A constant for kilometer conversion
 
     //A list of ints representing powerUp IDs. 
     protected List<PowerUp> powerUps;
@@ -69,11 +69,6 @@ public class PlayerController : MonoBehaviour
         //Called to increment the score
         IncreaseScore();
 
-        
-
-
-        
-        
     }
 
     protected void FixedUpdate()
@@ -148,6 +143,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //GameOverProcedure() handles the end of each level.
     protected void GameOverProcedure()
     {
         gameOver = true;

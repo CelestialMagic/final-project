@@ -21,7 +21,7 @@ public class GameStateManager : MonoBehaviour
     private string m_TitleSceneName;//A string representing the name of the Title Scene
 
     [SerializeField]
-    private string m_HighScoreSceneName;
+    private string m_HighScoreSceneName; //A string representing high score scene
 
     private static GAMESTATE m_State; //The current game state
 
@@ -51,7 +51,7 @@ public class GameStateManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Setup for making this class a Singlton - Don't modify this part of the code.
+        //Singleton Code
         if (_instance == null)
         {
             _instance = this;
@@ -66,12 +66,8 @@ public class GameStateManager : MonoBehaviour
             }
         }
 
-
-        //Put other inialization for you game state here
         ObstacleMoveSpeed = obstacleMovespeed;
         m_State = GAMESTATE.MENU;
-
-
 
     }
 
@@ -86,6 +82,7 @@ public class GameStateManager : MonoBehaviour
         PlayerPrefs.SetFloat("Score", finalScore);
     }
 
+    //Update() method contains the pause code
     private void Update()
     {
 
@@ -99,7 +96,6 @@ public class GameStateManager : MonoBehaviour
     //ResetScene() is responsible for resetting the current scene through a reload.
     public static void ResetScene()
     {
-        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         m_State = GAMESTATE.PLAYING;
     }
@@ -121,14 +117,13 @@ public class GameStateManager : MonoBehaviour
     }
 
     //StartGame() is used to start the game.
-    
     public static void StartGame()
     {
         m_State = GAMESTATE.PLAYING;
         NextLevel();
     }
 
-    //TogglePause() will be used later to pause the game. 
+    //TogglePause() is used to pause and unpause the game
     public static void TogglePause()
     {
         if(m_State == GAMESTATE.PLAYING)
@@ -142,8 +137,7 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
-    //Menu() changes the game state to MENU. It then loads the first scene,
-    //which is the title screen/main menu.
+    //Menu() loads the menu screen
     public static void Menu()
     {
         m_State = GAMESTATE.MENU; 
@@ -151,6 +145,7 @@ public class GameStateManager : MonoBehaviour
 
     }
 
+    //HighScoreMenu() loads the high score screen
     public static void HighScoreMenu()
     {
         m_State = GAMESTATE.MENU;
@@ -158,6 +153,7 @@ public class GameStateManager : MonoBehaviour
 
     }
 
+    //StoreScore() is called by the PlayerController to track the level score
     public static void StoreScore(float levelScore)
     {
         switch (SceneManager.GetActiveScene().buildIndex)
@@ -177,11 +173,13 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+    //CalculateFinalScore() calculates the final score
     public static void CalculateFinalScore()
     {
         finalScore = runScore + swimScore + cycleScore;
     }
 
+    //GameOver() acts as the procedure for the final game over (all three levels)
     public static void GameOver()
     {
         CalculateFinalScore();

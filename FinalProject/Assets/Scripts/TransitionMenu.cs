@@ -5,11 +5,7 @@ using UnityEngine;
 public class TransitionMenu : StartMenu
 {
     // Start is called before the first frame update
-    protected override void Start()
-    {
-        //Hides the menu
-      
-    }
+  
 
     private void Awake()
     {
