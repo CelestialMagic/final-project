@@ -29,4 +29,10 @@ public class BackgroundMover : MonoBehaviour
         }
 
     }
+
+    //StopMovement() is used to stop the background mover 
+    public void StopMovement()
+    {
+        moveSpeed = 0;
+    }
 }

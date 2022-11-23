@@ -6,6 +6,9 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
+    protected BackgroundMover background;//Represents the current background
+
+    [SerializeField]
     protected AudioClip m_JumpSound;//A clip representing the player jump sound
 
     [SerializeField]
@@ -151,8 +154,11 @@ public class PlayerController : MonoBehaviour
         GameStateManager.LevelGameOver();
         GameStateManager.TempGameOver();
         m_JumpForce = 0f;
-        m_SpeedForce = 0f; 
+        m_SpeedForce = 0f;
+        background.StopMovement();
 
     }
+
+    
    
 }

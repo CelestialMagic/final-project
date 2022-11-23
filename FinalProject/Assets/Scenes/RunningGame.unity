@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55e678020755e42abbe9bbc78b7ca3b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  background: {fileID: 1378985888}
   m_JumpSound: {fileID: 0}
   m_AudioSource: {fileID: 0}
   m_JumpForce: 5000
