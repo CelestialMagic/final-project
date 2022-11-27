@@ -1021,6 +1021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c6810c5d07c4f2487ec60d7a349ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  verticalSpeed: 1.5
   obstacleMovespeed: 5
   m_TitleSceneName: TitleScreen
   m_HighScoreSceneName: HighScoreScreen

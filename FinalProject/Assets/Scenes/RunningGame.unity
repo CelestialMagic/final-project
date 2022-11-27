@@ -815,11 +815,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefabs:
   - {fileID: 3118449553770341180, guid: cb011333b1680486ca635a6b0c647072, type: 3}
-  spawnMinTime: 1.5
-  spawnMaxTime: 4
-  startSpawnTime: 1
+  spawnMinTime: 3
+  spawnMaxTime: 6
+  startSpawnTime: 2.5
   spawnXlocation: 12
-  spawnYlocation: 3
+  spawnYlocation: 5
 --- !u!4 &653336999
 Transform:
   m_ObjectHideFlags: 0
@@ -1619,6 +1619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefabs:
   - {fileID: 3118449553770341180, guid: cb97ce1555c60dc46b8d2c201033eee7, type: 3}
+  - {fileID: 3118449553770341180, guid: 4fd705753e04efc46b41ec77191fdf5f, type: 3}
   spawnMinTime: 1.5
   spawnMaxTime: 4
   startSpawnTime: 1
