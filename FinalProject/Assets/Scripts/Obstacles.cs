@@ -6,13 +6,13 @@ public class Obstacles : MonoBehaviour
 {
    
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         //Move the obstacle a little bit each frame
         transform.Translate(-GameStateManager.ObstacleMoveSpeed * Time.deltaTime, 0f, 0f);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
 
         //This method is called when the object enters a collider trigger. 
