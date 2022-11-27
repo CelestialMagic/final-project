@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -1863646214804524347}
   - component: {fileID: 4912109958872185792}
   m_Layer: 0
-  m_Name: phanpy
+  m_Name: rock
   m_TagString: GameOver
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

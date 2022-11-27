@@ -16,10 +16,10 @@ public class FlyingObstacles : Obstacles
     protected override void Update()
     {
         //floating behavior:
-        if (transform.position.y >= maxHeight) //If the flying obstacle is at the top of its height
+        if (transform.position.y > maxHeight) //If the flying obstacle is at the top of its height, start moving down
         {
             transform.Translate(-GameStateManager.ObstacleMoveSpeed * Time.deltaTime, -verticalSpeed * Time.deltaTime, 0f);
-        } else if (transform.position.y <= minHeight)
+        } else if (transform.position.y < minHeight)
         {
             transform.Translate(-GameStateManager.ObstacleMoveSpeed * Time.deltaTime, verticalSpeed * Time.deltaTime, 0f);
         }

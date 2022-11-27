@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8220185450228129230}
   - component: {fileID: 8010794885199487759}
-  - component: {fileID: 3756101957807745547}
   - component: {fileID: -1863646214804524347}
   - component: {fileID: -1169290245687528171}
+  - component: {fileID: -8370483274353472782}
   m_Layer: 0
   m_Name: phanpy 1
   m_TagString: GameOver
@@ -87,18 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3756101957807745547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3118449553770341180}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b9658c35a6c9374d90938d4b6957c34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &-1863646214804524347
 Rigidbody2D:
   serializedVersion: 4
@@ -182,3 +170,18 @@ PolygonCollider2D:
       - {x: 0.14, y: -0.905}
       - {x: 0.22999999, y: -0.815}
       - {x: 0.34, y: -0.715}
+--- !u!114 &-8370483274353472782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3118449553770341180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c905206827b2b9489bb41a8b516863c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHeight: 3.5
+  minHeight: 2.5
+  verticalSpeed: 2
