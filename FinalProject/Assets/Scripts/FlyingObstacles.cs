@@ -11,18 +11,47 @@ public class FlyingObstacles : Obstacles
     [SerializeField] //if this doesn't work delete later
     private float verticalSpeed;
 
+    private bool isRising;
+
+    private int flip; 
 
     // Update is called once per frame
     protected override void Update()
     {
+        
         //floating behavior:
-        if (transform.position.y > maxHeight) //If the flying obstacle is at the top of its height, start moving down
+        if (transform.position.y >= maxHeight) //If the flying obstacle is at the top of its height, start moving down
         {
-            transform.Translate(-GameStateManager.ObstacleMoveSpeed * Time.deltaTime, -verticalSpeed * Time.deltaTime, 0f);
-        } else if (transform.position.y < minHeight)
+            isRising = false;
+            FlipMovement();
+            transform.Translate(-GameStateManager.ObstacleMoveSpeed * Time.deltaTime, flip * verticalSpeed * Time.deltaTime, 0f);
+         
+        }
+        else if(transform.position.y <= minHeight)
         {
-            transform.Translate(-GameStateManager.ObstacleMoveSpeed * Time.deltaTime, verticalSpeed * Time.deltaTime, 0f);
+            isRising = true;
+            FlipMovement();
+            transform.Translate(-GameStateManager.ObstacleMoveSpeed * Time.deltaTime, flip * verticalSpeed * Time.deltaTime, 0f);
+
+        }
+        else
+        {
+            transform.Translate(-GameStateManager.ObstacleMoveSpeed * Time.deltaTime, flip * verticalSpeed * Time.deltaTime, 0f);
+
         }
 
+
+
+        }
+    private void FlipMovement()
+    {
+        if(isRising == true)
+        {
+            flip = 1;
+        }
+        else 
+        {
+            flip = -1; 
+        }
     }
-}
+    }
