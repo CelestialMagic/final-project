@@ -8,12 +8,12 @@ public class FlyingObstacles : Obstacles
     private float maxHeight;
     [SerializeField]
     private float minHeight;
-    [SerializeField] //if this doesn't work delete later
-    private float verticalSpeed;
 
     private bool isRising;
 
     private int flip; 
+
+
 
     // Update is called once per frame
     protected override void Update()
@@ -24,19 +24,19 @@ public class FlyingObstacles : Obstacles
         {
             isRising = false;
             FlipMovement();
-            transform.Translate(-GameStateManager.ObstacleMoveSpeed * Time.deltaTime, flip * verticalSpeed * Time.deltaTime, 0f);
+            transform.Translate(-GameStateManager.ObstacleMoveSpeed * Time.deltaTime, flip * GameStateManager.VerticalMoveSpeed * Time.deltaTime, 0f);
          
         }
         else if(transform.position.y <= minHeight)
         {
             isRising = true;
             FlipMovement();
-            transform.Translate(-GameStateManager.ObstacleMoveSpeed * Time.deltaTime, flip * verticalSpeed * Time.deltaTime, 0f);
+            transform.Translate(-GameStateManager.ObstacleMoveSpeed * Time.deltaTime, flip * GameStateManager.VerticalMoveSpeed * Time.deltaTime, 0f);
 
         }
         else
         {
-            transform.Translate(-GameStateManager.ObstacleMoveSpeed * Time.deltaTime, flip * verticalSpeed * Time.deltaTime, 0f);
+            transform.Translate(-GameStateManager.ObstacleMoveSpeed * Time.deltaTime, flip * GameStateManager.VerticalMoveSpeed * Time.deltaTime, 0f);
 
         }
 

@@ -9,8 +9,11 @@ public class GameStateManager : MonoBehaviour
 {
     public static Action TempGameOver;  //You can ignore this for now - we will talk about Actions a bit later in this course.
     public static float ObstacleMoveSpeed { get; private set; } //A read only global property that makes it easy for us to change the move speed of the pillars.
+    public static float VerticalMoveSpeed { get; private set; }
 
-   
+    [SerializeField] 
+    private float verticalSpeed;//Used to control the speed of obstacles moving up and down 
+
     [SerializeField]
     private float obstacleMovespeed; //This field is exposed in the editor but private to the class, this allows us to adjust the move speed of the pilars in the editor
 
@@ -67,6 +70,7 @@ public class GameStateManager : MonoBehaviour
         }
 
         ObstacleMoveSpeed = obstacleMovespeed;
+        VerticalMoveSpeed = verticalSpeed;
         m_State = GAMESTATE.MENU;
 
     }
@@ -78,6 +82,7 @@ public class GameStateManager : MonoBehaviour
     {
         m_State = GAMESTATE.GAMEOVER;
         ObstacleMoveSpeed = 0;
+        VerticalMoveSpeed = 0;
         CalculateFinalScore();
         PlayerPrefs.SetFloat("Score", finalScore);
     }
