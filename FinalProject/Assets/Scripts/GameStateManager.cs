@@ -8,11 +8,14 @@ using System;
 public class GameStateManager : MonoBehaviour
 {
     public static Action TempGameOver;  //You can ignore this for now - we will talk about Actions a bit later in this course.
-    public static float ObstacleMoveSpeed { get; private set; } //A read only global property that makes it easy for us to change the move speed of the pillars.
-    public static float VerticalMoveSpeed { get; private set; }
+    public static float ObstacleMoveSpeed { get; private set; } //A read only global property that makes it easy for us to change the move speed of the obstacles.
+    public static float VerticalMoveSpeed { get; private set; } //A global variable that allows us to change the vertical speed of floating obstacles
+    public static bool CanSpawn { get; private set; }//A global boolean representing when obstacle spawners can spawn.
+    public static float savedObstacleMove;
+    public static float savedVerticalMove; 
 
     [SerializeField] 
-    private float verticalSpeed;//Used to control the speed of obstacles moving up and down 
+    private float verticalSpeed;//Used to control the speed of floating obstacles
 
     [SerializeField]
     private float obstacleMovespeed; //This field is exposed in the editor but private to the class, this allows us to adjust the move speed of the pilars in the editor
@@ -25,6 +28,9 @@ public class GameStateManager : MonoBehaviour
 
     [SerializeField]
     private string m_HighScoreSceneName; //A string representing high score scene
+
+    [SerializeField]
+    private string m_FinalScoreScene; //A string representing the final score scene
 
     private static GAMESTATE m_State; //The current game state
 
@@ -71,6 +77,9 @@ public class GameStateManager : MonoBehaviour
 
         ObstacleMoveSpeed = obstacleMovespeed;
         VerticalMoveSpeed = verticalSpeed;
+        savedObstacleMove = obstacleMovespeed;
+        savedVerticalMove = verticalSpeed;
+        CanSpawn = true; 
         m_State = GAMESTATE.MENU;
 
     }
@@ -83,8 +92,7 @@ public class GameStateManager : MonoBehaviour
         m_State = GAMESTATE.GAMEOVER;
         ObstacleMoveSpeed = 0;
         VerticalMoveSpeed = 0;
-        CalculateFinalScore();
-        PlayerPrefs.SetFloat("Score", finalScore);
+        CanSpawn = false;
     }
 
     //Update() method contains the pause code
@@ -113,12 +121,23 @@ public class GameStateManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            m_State = GAMESTATE.PLAYING; 
+            m_State = GAMESTATE.PLAYING;
+            ObstacleMoveSpeed = savedObstacleMove;
+            VerticalMoveSpeed = savedVerticalMove;
+            CanSpawn = true;
             
 
 
         }
         
+    }
+
+    //A method used to carry out the gameover sequence and display
+    public static void FinalScoreScene()
+    {
+        GameOver();
+        SceneManager.LoadScene(_instance.m_FinalScoreScene);
+
     }
 
     //StartGame() is used to start the game.

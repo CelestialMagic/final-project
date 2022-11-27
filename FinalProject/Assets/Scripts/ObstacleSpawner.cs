@@ -29,7 +29,7 @@ public class ObstacleSpawner : MonoBehaviour
     void Update()
     {
         //Here we will want to check if it's time to spawn another obstacle. 
-        if (nextSpawnTime < Time.time) //if the nextSpawnTime is NOW or in the past, spawn an obstacle
+        if (nextSpawnTime < Time.time && GameStateManager.CanSpawn == true) //if the nextSpawnTime is NOW or in the past, spawn an obstacle
         {
             //Randomly select an obstacle 
                 int random = Random.Range(0, obstaclePrefabs.Count); //Choose a random type of pillar from the list

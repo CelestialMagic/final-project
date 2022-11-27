@@ -42,8 +42,6 @@ public class PlayerController : MonoBehaviour
 
     protected const float divider = 1000; //A constant for kilometer conversion
 
-    //A list of ints representing powerUp IDs. 
-    protected List<PowerUp> powerUps;
 
    
 
@@ -51,7 +49,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     { 
         m_Renderer = GetComponent<SpriteRenderer>();
-        powerUps = new List<PowerUp>();
         scoreTimer = 0f;
         gameOver = false;
     }
@@ -67,8 +64,6 @@ public class PlayerController : MonoBehaviour
             m_ToApplyMove += new Vector3(0, m_JumpForce *Time.deltaTime, 0);
             
         }
-
-        UsePowerUp();
         //Called to increment the score
         IncreaseScore();
 
@@ -82,31 +77,6 @@ public class PlayerController : MonoBehaviour
             m_ToApplyMove = Vector3.zero;
     }
 
-    
-    protected void OnTriggerEnter2D(Collider2D collision)
-    {
-        //When the player collides with a PowerUp, it is added to
-        //the powerUps list. 
-        if (collision.gameObject.tag == "PowerUp")
-        {
-            powerUps.Add(collision.gameObject.GetComponent<PowerUp>());
-
-        }
-
-    }
-
-    //UsePowerUp() allows players to activate a power up given that they
-    //hit enter/return and have collected at least one powerup. 
-    protected void UsePowerUp()
-    {
-        if (Input.GetKeyDown(KeyCode.Return) && powerUps.Count >= 1)
-        {
-            //Temporary Tester Code
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = powerUps[0].GetIcon();
-            powerUps.Remove(powerUps[0]);
-
-        }
-    }
 
     //The score increases each frame after a certain delay.
     //The delay slows down the incremented score to make

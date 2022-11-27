@@ -1021,10 +1021,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c6810c5d07c4f2487ec60d7a349ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalSpeed: 1.5
+  verticalSpeed: 2
   obstacleMovespeed: 5
   m_TitleSceneName: TitleScreen
   m_HighScoreSceneName: HighScoreScreen
+  m_FinalScoreScene: EndScreen
 --- !u!4 &1694540058
 Transform:
   m_ObjectHideFlags: 0

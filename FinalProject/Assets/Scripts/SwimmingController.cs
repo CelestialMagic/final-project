@@ -21,8 +21,6 @@ public class SwimmingController : PlayerController
         {
             m_ToApplyMove += new Vector3(-m_SpeedForce * Time.deltaTime, 0, 0);
         }
-        
-        UsePowerUp();
         IncreaseScore();
      
     }

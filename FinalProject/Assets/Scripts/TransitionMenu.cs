@@ -37,6 +37,11 @@ public class TransitionMenu : StartMenu
     {
         GameStateManager.NextLevel();
     }
+
+    public void FinalNextLevel()
+    {
+        GameStateManager.FinalScoreScene();
+    }
    
 
 }
