@@ -5,34 +5,34 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
     [SerializeField]
-    private List<GameObject> obstaclePrefabs; //a list of the obstacles
+    protected List<GameObject> obstaclePrefabs; //a list of the obstacles
     [SerializeField]
-    private float spawnMinTime; //The minimum amount of time to wait before spawning an obstacle
+    protected float spawnMinTime; //The minimum amount of time to wait before spawning an obstacle
     [SerializeField]
-    private float spawnMaxTime; //The maximum amount of time to wait before spawning an obstacle
+    protected float spawnMaxTime; //The maximum amount of time to wait before spawning an obstacle
     [SerializeField]
-    private float startSpawnTime; //When the obstacles start spawning (so we can give the player a bit of time before it starts)
+    protected float startSpawnTime; //When the obstacles start spawning (so we can give the player a bit of time before it starts)
     [SerializeField]
-    private float spawnXlocation;
+    protected float spawnXlocation;
     [SerializeField]
-    private float spawnYlocation;
+    protected float spawnYlocation;
 
     private float nextSpawnTime; //the next time so spawn an obstacle
 
-    void Start()
+    protected void Start()
     {
-        //Initalize when you will spawn the first pillar here.
+        //Initalize when you will spawn the first obstacle here
         nextSpawnTime = Time.time + startSpawnTime + Random.Range(spawnMinTime, spawnMaxTime); //Time.time is current time ellapsed in seconds from when the game starts;
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         //Here we will want to check if it's time to spawn another obstacle. 
         if (nextSpawnTime < Time.time && GameStateManager.CanSpawn == true) //if the nextSpawnTime is NOW or in the past, spawn an obstacle
         {
             //Randomly select an obstacle 
-                int random = Random.Range(0, obstaclePrefabs.Count); //Choose a random type of pillar from the list
+                int random = Random.Range(0, obstaclePrefabs.Count); //Choose a random type of obstacle from the list
                 //Use Instantiate to create an instance of that template in the game world.
                 GameObject go = Instantiate(obstaclePrefabs[random]);
                 go.transform.Translate(spawnXlocation, spawnYlocation, 0f);
