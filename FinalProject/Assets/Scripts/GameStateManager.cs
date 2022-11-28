@@ -12,7 +12,13 @@ public class GameStateManager : MonoBehaviour
     public static float VerticalMoveSpeed { get; private set; } //A global variable that allows us to change the vertical speed of floating obstacles
     public static bool CanSpawn { get; private set; }//A global boolean representing when obstacle spawners can spawn.
     public static float savedObstacleMove;
-    public static float savedVerticalMove; 
+    public static float savedVerticalMove;
+
+    [SerializeField]
+    private AudioClip m_MenuMusic;
+
+    [SerializeField]
+    private AudioClip m_GameMusic;
 
     [SerializeField] 
     private float verticalSpeed;//Used to control the speed of floating obstacles
@@ -125,6 +131,7 @@ public class GameStateManager : MonoBehaviour
             ObstacleMoveSpeed = savedObstacleMove;
             VerticalMoveSpeed = savedVerticalMove;
             CanSpawn = true;
+            SoundManager.PlayMusic(_instance.m_GameMusic);
             
 
 
@@ -166,6 +173,7 @@ public class GameStateManager : MonoBehaviour
     {
         m_State = GAMESTATE.MENU; 
         SceneManager.LoadScene(_instance.m_TitleSceneName);
+        SoundManager.PlayMusic(_instance.m_MenuMusic);
 
     }
 
