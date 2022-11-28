@@ -500,9 +500,11 @@ MonoBehaviour:
   spawnXlocation: 0
   spawnYlocation: 12
   spawnLocations:
-  - -20
+  - -7
   - 0
-  - 20
+  - 7
+  - -5
+  - 5
 --- !u!1 &1283770843
 GameObject:
   m_ObjectHideFlags: 0
