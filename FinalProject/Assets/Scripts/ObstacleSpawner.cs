@@ -17,7 +17,7 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField]
     protected float spawnYlocation;
 
-    private float nextSpawnTime; //the next time so spawn an obstacle
+    protected float nextSpawnTime; //the next time so spawn an obstacle
 
     protected void Start()
     {
