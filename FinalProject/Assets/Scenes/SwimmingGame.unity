@@ -494,8 +494,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstaclePrefabs:
   - {fileID: 3118449553770341180, guid: 6da577e58ff2e498d8d4985f4f97fc98, type: 3}
-  spawnMinTime: 1.5
-  spawnMaxTime: 4
+  spawnMinTime: 1
+  spawnMaxTime: 3
   startSpawnTime: 1
   spawnXlocation: 0
   spawnYlocation: 12

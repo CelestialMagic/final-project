@@ -5,9 +5,9 @@ using UnityEngine;
 public class SwimmingObstacleSpawner : ObstacleSpawner
 {
     [SerializeField]
-    private List<float> spawnLocations;
+    private List<float> spawnLocations;//A list representing different x-spawn locations for obstacles. 
 
-
+    //The Update() method inherits from the ObstacleSpawner() 
     protected override void Update()
     {
         if (nextSpawnTime < Time.time && GameStateManager.CanSpawn == true) //if the nextSpawnTime is NOW or in the past, spawn an obstacle

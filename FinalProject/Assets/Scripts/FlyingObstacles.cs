@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class FlyingObstacles : Obstacles
 {
-    [SerializeField] //for the flying behavior, we want the obstacles to move up and down
+    [SerializeField] //float representing max height of a floating obstacle
     private float maxHeight;
     [SerializeField]
-    private float minHeight;
+    private float minHeight;//float representing min height of a floating obstacle
 
-    private bool isRising;
+    private bool isRising;//bool used to determine if an obstacle is floating
 
-    private int flip; 
+    private int flip;//int used to determine negative or positive movement
 
 
 
@@ -20,7 +20,7 @@ public class FlyingObstacles : Obstacles
     {
         
         //floating behavior:
-        if (transform.position.y >= maxHeight) //If the flying obstacle is at the top of its height, start moving down
+        if (transform.position.y >= maxHeight)
         {
             isRising = false;
             FlipMovement();
@@ -43,6 +43,8 @@ public class FlyingObstacles : Obstacles
 
 
         }
+
+    //FlipMovement() determines when to move an obstacle up or down. 
     private void FlipMovement()
     {
         if(isRising == true)
