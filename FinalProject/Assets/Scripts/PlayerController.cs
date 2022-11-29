@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && gameObject.transform.position.y <= jumpHeight)
         {
             m_ToApplyMove += new Vector3(0, m_JumpForce *Time.deltaTime, 0);
+            m_AudioSource.PlayOneShot(m_JumpSound);
             
         }
         //Called to increment the score
