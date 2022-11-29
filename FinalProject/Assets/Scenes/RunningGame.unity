@@ -481,7 +481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 1378985888}
-  m_JumpSound: {fileID: 8300000, guid: 31473352b71bb482ca79e562969a7148, type: 3}
+  m_JumpSound: {fileID: 8300000, guid: ba39bf8baf6d13046889b2d64822381a, type: 3}
   m_AudioSource: {fileID: 1973140200}
   m_JumpForce: 5000
   m_SpeedForce: 1
@@ -1649,7 +1649,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 7520354409170345487, guid: 6b8cdfb4129a7ff41a5e12f49b299787, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.52
   m_Pitch: 1
   Loop: 0
   Mute: 0
