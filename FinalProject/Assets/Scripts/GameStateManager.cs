@@ -8,11 +8,17 @@ using System;
 public class GameStateManager : MonoBehaviour
 {
     public static Action TempGameOver;  //You can ignore this for now - we will talk about Actions a bit later in this course.
-    public static float ObstacleMoveSpeed { get; private set; } //A read only global property that makes it easy for us to change the move speed of the obstacles.
+
+    public static float ObstacleMoveSpeed { get; private set; } //A read only global property that makes it easy for us to change the move speed of the obstacles
+                                                                //.
     public static float VerticalMoveSpeed { get; private set; } //A global variable that allows us to change the vertical speed of floating obstacles
+
     public static bool CanSpawn { get; private set; }//A global boolean representing when obstacle spawners can spawn.
-    public static float savedObstacleMove;
-    public static float savedVerticalMove;
+
+    private static float savedObstacleMove;//Used to save the obstacle speed from scene to scene (prevents reset)
+
+    private static float savedVerticalMove;//Used to save the vertical move speed from scene to scene (prevents reset) 
+
 
 
     [SerializeField]
