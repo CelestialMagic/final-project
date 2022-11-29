@@ -1150,6 +1150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c6810c5d07c4f2487ec60d7a349ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_DieSound: {fileID: 8300000, guid: a5a5905429ad44617a98743b2f870fa6, type: 3}
   m_MenuMusic: {fileID: 8300000, guid: 1bc767b36dd7a448fbb7bc01a9cd7f26, type: 3}
   m_GameMusic: {fileID: 8300000, guid: 178ca1a7c8ff94f5b8cf545caa95bc30, type: 3}
   verticalSpeed: 2

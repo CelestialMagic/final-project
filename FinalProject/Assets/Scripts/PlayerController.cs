@@ -61,8 +61,8 @@ public class PlayerController : MonoBehaviour
         //to the jumpHeight. This also limits how high the player can jump.
         if (Input.GetKey(KeyCode.Space) && gameObject.transform.position.y <= jumpHeight)
         {
-            m_ToApplyMove += new Vector3(0, m_JumpForce *Time.deltaTime, 0);
             m_AudioSource.PlayOneShot(m_JumpSound);
+            m_ToApplyMove += new Vector3(0, m_JumpForce *Time.deltaTime, 0);
             
         }
         //Called to increment the score

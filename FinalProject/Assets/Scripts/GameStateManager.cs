@@ -14,11 +14,15 @@ public class GameStateManager : MonoBehaviour
     public static float savedObstacleMove;
     public static float savedVerticalMove;
 
-    [SerializeField]
-    private AudioClip m_MenuMusic;
 
     [SerializeField]
-    private AudioClip m_GameMusic;
+    private AudioClip m_DieSound;//Represents hit an object sound effect
+
+    [SerializeField]
+    private AudioClip m_MenuMusic;//Represents menu music
+
+    [SerializeField]
+    private AudioClip m_GameMusic;//Represents gameplay music
 
     [SerializeField] 
     private float verticalSpeed;//Used to control the speed of floating obstacles
@@ -99,6 +103,7 @@ public class GameStateManager : MonoBehaviour
         ObstacleMoveSpeed = 0;
         VerticalMoveSpeed = 0;
         CanSpawn = false;
+        SoundManager.PlaySFX(_instance.m_DieSound);
     }
 
     //Update() method contains the pause code
