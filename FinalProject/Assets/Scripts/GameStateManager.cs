@@ -30,6 +30,7 @@ public class GameStateManager : MonoBehaviour
     [SerializeField]
     private AudioClip m_GameMusic;//Represents gameplay music
 
+
     [SerializeField] 
     private float verticalSpeed;//Used to control the speed of floating obstacles
 

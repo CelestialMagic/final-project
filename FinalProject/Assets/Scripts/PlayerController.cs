@@ -25,7 +25,9 @@ public class PlayerController : MonoBehaviour
 
     protected Vector3 m_ToApplyMove;//A Vector3 representing the player movement force
 
-    protected Animator m_Anim;//The Animator
+    [SerializeField]
+    private Animator m_Anim;//The Animator
+    [SerializeField]
     protected SpriteRenderer m_Renderer;//The Sprite Renderer
 
     [SerializeField]
@@ -48,7 +50,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     { 
-        m_Renderer = GetComponent<SpriteRenderer>();
         scoreTimer = 0f;
         gameOver = false;
     }
@@ -61,12 +62,17 @@ public class PlayerController : MonoBehaviour
         //to the jumpHeight. This also limits how high the player can jump.
         if (Input.GetKey(KeyCode.Space) && gameObject.transform.position.y <= jumpHeight)
         {
+           
             m_AudioSource.PlayOneShot(m_JumpSound);
             m_ToApplyMove += new Vector3(0, m_JumpForce *Time.deltaTime, 0);
-            
+           
+
         }
+        
         //Called to increment the score
         IncreaseScore();
+       
+
 
     }
 
@@ -76,6 +82,9 @@ public class PlayerController : MonoBehaviour
         //Resets to zero after. 
             m_Rigidbody.AddForce(m_ToApplyMove);
             m_ToApplyMove = Vector3.zero;
+        
+
+
     }
 
 

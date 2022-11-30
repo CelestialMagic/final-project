@@ -240,6 +240,8 @@ MonoBehaviour:
   m_JumpForce: 5000
   m_SpeedForce: 1
   m_Rigidbody: {fileID: 202771581}
+  m_Anim: {fileID: 202771586}
+  m_Renderer: {fileID: 202771583}
   jumpHeight: -3
   scoreDelay: 0.1
 --- !u!50 &202771581
