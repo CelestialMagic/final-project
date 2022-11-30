@@ -415,8 +415,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367828707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.69, y: -3.14, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalPosition: {x: -6.69, y: -2.89, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -458,7 +458,7 @@ MonoBehaviour:
   background: {fileID: 1378985888}
   m_JumpSound: {fileID: 8300000, guid: ba39bf8baf6d13046889b2d64822381a, type: 3}
   m_AudioSource: {fileID: 1973140200}
-  m_JumpForce: 5000
+  m_JumpForce: 12000
   m_SpeedForce: 1
   m_Rigidbody: {fileID: 367828710}
   jumpHeight: -2.5
