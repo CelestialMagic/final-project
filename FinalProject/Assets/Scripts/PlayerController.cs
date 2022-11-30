@@ -129,6 +129,7 @@ public class PlayerController : MonoBehaviour
     //GameOverProcedure() handles the end of each level.
     protected void GameOverProcedure()
     {
+        m_Anim.SetBool("gameOver", true);
         gameOver = true;
         GameStateManager.StoreScore(GetScore());
         GameStateManager.LevelGameOver();
@@ -136,7 +137,7 @@ public class PlayerController : MonoBehaviour
         m_JumpForce = 0f;
         m_SpeedForce = 0f;
         background.StopMovement();
-
+        
     }
 
     
