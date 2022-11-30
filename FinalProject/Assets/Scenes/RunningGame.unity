@@ -343,10 +343,11 @@ GameObject:
   m_Component:
   - component: {fileID: 367828709}
   - component: {fileID: 367828708}
-  - component: {fileID: 367828711}
   - component: {fileID: 367828710}
   - component: {fileID: 367828712}
   - component: {fileID: 367828713}
+  - component: {fileID: 367828714}
+  - component: {fileID: 367828715}
   m_Layer: 0
   m_Name: 'Player '
   m_TagString: Player
@@ -395,7 +396,7 @@ SpriteRenderer:
   m_SortingLayerID: 1198272817
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 1135097929, guid: 3f7d63ae9c48144f0bcefab3e77295ec, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -414,8 +415,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 367828707}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.69, y: -3.45, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -6.69, y: -3.14, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -442,32 +443,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!61 &367828711
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 367828707}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!114 &367828712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -518,6 +493,83 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &367828714
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367828707}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 98b1c6dfb4ed14353a5ec909ff10d85e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &367828715
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367828707}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.16, y: 1.12}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.35, y: -0.38}
+      - {x: 0.41, y: -0.32999998}
+      - {x: 0.48, y: -0.16}
+      - {x: 0.51, y: 0.02}
+      - {x: 0.57, y: 0.07}
+      - {x: 0.58, y: 0.089999996}
+      - {x: 0.58, y: 0.32999998}
+      - {x: 0.53999996, y: 0.41}
+      - {x: 0.48999998, y: 0.53}
+      - {x: 0.45999998, y: 0.56}
+      - {x: 0.32, y: 0.56}
+      - {x: 0.28, y: 0.52}
+      - {x: 0.16, y: 0.53}
+      - {x: 0.14, y: 0.56}
+      - {x: 0, y: 0.56}
+      - {x: -0.08, y: 0.48}
+      - {x: -0.089999996, y: 0.39}
+      - {x: -0.089999996, y: 0.22999999}
+      - {x: -0.14999999, y: 0.22999999}
+      - {x: -0.17, y: 0.19}
+      - {x: -0.35, y: 0.19}
+      - {x: -0.42999998, y: 0.16}
+      - {x: -0.58, y: -0.01}
+      - {x: -0.58, y: -0.21}
+      - {x: -0.53999996, y: -0.29}
+      - {x: -0.48999998, y: -0.41}
+      - {x: -0.45, y: -0.53}
+      - {x: -0.42, y: -0.56}
+      - {x: -0.16, y: -0.56}
+      - {x: -0.16, y: -0.38}
+      - {x: 0.06, y: -0.56}
+      - {x: 0.32, y: -0.56}
 --- !u!1 &398700406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,6 +1898,7 @@ MonoBehaviour:
   obstaclePrefabs:
   - {fileID: 3118449553770341180, guid: cb97ce1555c60dc46b8d2c201033eee7, type: 3}
   - {fileID: 3118449553770341180, guid: 4fd705753e04efc46b41ec77191fdf5f, type: 3}
+  - {fileID: 3118449553770341180, guid: a35817fe76e784be48fb787fe933b5e3, type: 3}
   spawnMinTime: 1.5
   spawnMaxTime: 4
   startSpawnTime: 1
