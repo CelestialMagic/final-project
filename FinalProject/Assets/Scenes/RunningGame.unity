@@ -458,7 +458,7 @@ MonoBehaviour:
   background: {fileID: 1378985888}
   m_JumpSound: {fileID: 8300000, guid: ba39bf8baf6d13046889b2d64822381a, type: 3}
   m_AudioSource: {fileID: 1973140200}
-  m_JumpForce: 5000
+  m_JumpForce: 6000
   m_SpeedForce: 1
   m_Rigidbody: {fileID: 367828710}
   m_Anim: {fileID: 367828714}
